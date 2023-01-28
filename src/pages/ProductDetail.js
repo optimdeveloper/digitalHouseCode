@@ -1,7 +1,8 @@
 import React, {useEffect} from 'react';
-import {View} from 'react-native';
+import {View,Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import MainContainer from '../components/common/MainContainer';
+
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,9 @@ const ProductDetail = () => {
 
   return (
     <MainContainer header={{title: 'Bienvenido de vuelta!', noLeft: false}}>
-      <View style={{flex: 1}}>Products Detail</View>
+      <View style={{flex: 1}}>
+      <Text >Products Detail</Text>
+      </View>
     </MainContainer>
   );
 };

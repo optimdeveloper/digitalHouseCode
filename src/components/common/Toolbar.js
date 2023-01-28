@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import {Image, StatusBar, I18nManager} from 'react-native';
 import {Header, Left, Right, Body, Icon, Text, Title} from 'native-base';
-import Clickable from './Clickable';
-import {Colors, Fonts, Images} from '../../constants';
 import {goBack} from '../../navigation/RootNavigation';
+import Clickable from './Clickable';
+import Colors from '../../constants/Colors';
+import Images from '../../constants/Images';
+import Fonts from '../../constants/Fonts';
 
 class Toolbar extends Component {
   componentDidMount() {}
@@ -17,7 +19,6 @@ class Toolbar extends Component {
         transparent
         androidStatusBarColor={
           this.props.androidStatusBarColor ||
-          this.props.backgroundColor ||
           'transparent'
         }
         style={{
@@ -42,7 +43,7 @@ class Toolbar extends Component {
 
         <Body style={{flex: 3}}>{this._renderTitle()}</Body>
         <Right style={{flex: 1}}>{this._renderRight()}</Right>
-        <StatusBar translucent={true} barStyle={'light-content'} />
+        <StatusBar translucent={true} barStyle={'dark-content'} />
       </Header>
     );
   }
@@ -54,7 +55,7 @@ class Toolbar extends Component {
       return (
         <Title
           style={[
-            {color: Colors.white, alignSelf: 'center'},
+            {alignSelf: 'center'},
             styles.titleStyle,
           ]}>
           {title}
@@ -139,8 +140,7 @@ const styles = {
   },
   titleStyle: {
     fontSize: Fonts.size._20px,
-    color: Colors.white,
-    //fontWeight:"400",
+    color: Colors.black,
     fontFamily: Fonts.name.bold,
   },
   textContainerStyle: {},
