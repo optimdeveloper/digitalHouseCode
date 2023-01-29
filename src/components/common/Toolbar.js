@@ -12,7 +12,6 @@ class Toolbar extends Component {
 
   render() {
     return (
-      // <Header androidStatusBarColor={this.props.androidStatusBarColor || 'transparent'} {...this.props} style={{ backgroundColor: this.props.backgroundColor || Colors.darkBlue, justifyContent: 'center' }} >
       <Header
         onLayout={this.props.onLayout}
         translucent
@@ -28,7 +27,7 @@ class Toolbar extends Component {
           borderBottomColor: Colors.Backgroundgrey,
           ...this.props.style,
         }}>
-        <Left style={{flex: 1}}>
+        {!this.props.noLeft && <Left style={{flex: 1}}>
           {this._renderOption(
             this.props.noLeft
               ? undefined
@@ -39,7 +38,7 @@ class Toolbar extends Component {
                   },
                 },
           )}
-        </Left>
+        </Left> }
 
         <Body style={{flex: 3}}>{this._renderTitle()}</Body>
         <Right style={{flex: 1}}>{this._renderRight()}</Right>
@@ -139,7 +138,7 @@ const styles = {
     fontFamily: Fonts.name.bold,
   },
   titleStyle: {
-    fontSize: Fonts.size._20px,
+    fontSize: Fonts.size._24px,
     color: Colors.black,
     fontFamily: Fonts.name.bold,
   },

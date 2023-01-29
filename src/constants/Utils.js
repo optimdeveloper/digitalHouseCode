@@ -1,0 +1,26 @@
+import { Toast } from "native-base";
+import moment from 'moment';
+import 'moment/locale/es'
+export default {
+
+    showToast(message, duration = 4000, type = 'success') {
+        Toast.show({
+            text: message.toString(),
+            duration: duration,
+            position: 'top',
+            type: type
+        })
+
+    },
+    showWarningToast(message, duration = 4000) {
+        this.showToast(message, duration, 'warning');
+    },
+
+    showErrorToast(message, duration = 4000) {
+        this.showToast(message, duration, 'danger');
+    },
+    formatDate(item){
+        return moment(item.createdAt).locale('es').format('D [de] MMMM, YYYY')
+    }
+
+}

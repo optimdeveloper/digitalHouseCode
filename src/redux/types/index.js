@@ -2,7 +2,9 @@
 export const PRODUCTS_SUCCESS = "PRODUCTS_SUCCESS";
 export const PRODUCTS_LOADING = "PRODUCTS_LOADING";
 export const PRODUCTS_ERROR = "PRODUCTS_ERROR";
-
+export const PRODUCT_SET = "PRODUCT_SET";
+export const PRODUCTS_WON ="PRODUCTS_WON";
+export const PRODUCTS_LOSE ="PRODUCTS_LOSE";
 
 
 

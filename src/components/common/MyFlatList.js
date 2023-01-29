@@ -1,5 +1,6 @@
 import React, { useRef, } from 'react'
 import {  FlatList,SafeAreaView } from 'react-native'
+import Colors from '../../constants/Colors'
 import Indicator from './Indicator'
 
 import NoDataView from './NoDataView'
@@ -56,7 +57,7 @@ export default function MyFlatList({ renderItem,
     }
 
     return (  
-        <SafeAreaView style={{flex:1}}>
+        <SafeAreaView style={{flex:1,borderRadius:7,backgroundColor:Colors.white}}>
       {render()}
     </SafeAreaView>
     )

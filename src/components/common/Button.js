@@ -1,40 +1,34 @@
 import React from 'react';
+import { Text } from 'react-native';
 import Colors from '../../constants/Colors';
 import Fonts from '../../constants/Fonts';
 import Clickable from './Clickable';
-import MyText from './MyText';
 
 
-
-const Button = ({ style, buttonTextStyle, onPress, disabled, bordered, disableAllCaps, title }) => {
+const Button = ({ style, onPress, disabled, bordered,title,font }) => {
     const button = {
         backgroundColor: bordered ? "transparent" : disabled ? Colors.darkYellow : Colors.buttonColor,
-        height: 37,
         borderWidth: bordered ? 1 : 0,
         borderColor: bordered ? Colors.buttonColor : undefined,
-        borderRadius: 3,
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row",
-
+        flex:1,
+        padding:20,
+        margin:5,
+        justifyContent:'center',
+        textAlign: "center",
+        alignSelf:"center",
+        borderRadius:10
     }
     const textStyle = {
         textAlign: "center",
         color: bordered ? Colors.headerTitleColor : Colors.white,
         fontFamily: Fonts.name.bold,
-        fontSize: Fonts.size._13px,
-        marginHorizontal: 16,
-
+        fontSize: font ? Fonts.size._12px : Fonts.size._16px,
+      
     }
 
-
     return (
-
         <Clickable onPress={onPress} style={[button, style]}>
-
-            <MyText numberOfLines={1} style={[textStyle, buttonTextStyle]}
-                text={disableAllCaps ? title : title.toUpperCase()} />
-
+            <Text style={[textStyle]}>{title}</Text>
         </Clickable>
        
     );

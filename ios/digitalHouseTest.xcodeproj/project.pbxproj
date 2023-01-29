@@ -17,7 +17,6 @@
 		E29E146865D54A158FDD8C18 /* Avenir-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7805724A79234CE580C47E12 /* Avenir-Black.otf */; };
 		981FD05442534476BAF05B8A /* Avenir-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9EE47AB4A9CE4118A9694EE0 /* Avenir-Book.otf */; };
 		79DC9EF7FB124993BC2C8920 /* Avenir-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1867B573F55E4B66949B1678 /* Avenir-Roman.otf */; };
-		C7DDD63B1E8D4B8A841F871A /* Cutest-Things.otf in Resources */ = {isa = PBXBuildFile; fileRef = 829CE6BA4AD040CEA96B82C1 /* Cutest-Things.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +50,6 @@
 		7805724A79234CE580C47E12 /* Avenir-Black.otf */ = {isa = PBXFileReference; name = "Avenir-Black.otf"; path = "../assets/fonts/Avenir-Font/Avenir-Black.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9EE47AB4A9CE4118A9694EE0 /* Avenir-Book.otf */ = {isa = PBXFileReference; name = "Avenir-Book.otf"; path = "../assets/fonts/Avenir-Font/Avenir-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1867B573F55E4B66949B1678 /* Avenir-Roman.otf */ = {isa = PBXFileReference; name = "Avenir-Roman.otf"; path = "../assets/fonts/Avenir-Font/Avenir-Roman.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		829CE6BA4AD040CEA96B82C1 /* Cutest-Things.otf */ = {isa = PBXFileReference; name = "Cutest-Things.otf"; path = "../assets/fonts/cutest_things/Cutest-Things.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +161,6 @@
 				7805724A79234CE580C47E12 /* Avenir-Black.otf */,
 				9EE47AB4A9CE4118A9694EE0 /* Avenir-Book.otf */,
 				1867B573F55E4B66949B1678 /* Avenir-Roman.otf */,
-				829CE6BA4AD040CEA96B82C1 /* Cutest-Things.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 				E29E146865D54A158FDD8C18 /* Avenir-Black.otf in Resources */,
 				981FD05442534476BAF05B8A /* Avenir-Book.otf in Resources */,
 				79DC9EF7FB124993BC2C8920 /* Avenir-Roman.otf in Resources */,
-				C7DDD63B1E8D4B8A841F871A /* Cutest-Things.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
