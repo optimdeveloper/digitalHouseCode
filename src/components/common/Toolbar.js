@@ -8,23 +8,24 @@ import Images from '../../constants/Images';
 import Fonts from '../../constants/Fonts';
 
 class Toolbar extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+  }
 
   render() {
     return (
       <Header
         onLayout={this.props.onLayout}
-        translucent
         transparent
         androidStatusBarColor={
           this.props.androidStatusBarColor ||
           'transparent'
         }
         style={{
-          backgroundColor: this.props.backgroundColor || Colors.backgroundColor,
+          height:!this.props.hheader ? 0 :150,
+          backgroundColor: this.props.backgroundColor || Colors.screen,
           justifyContent: 'center',
           borderBottomWidth: 0,
-          borderBottomColor: Colors.Backgroundgrey,
+          borderBottomColor: 'transparent',
           ...this.props.style,
         }}>
         {!this.props.noLeft && <Left style={{flex: 1}}>
@@ -40,7 +41,7 @@ class Toolbar extends Component {
           )}
         </Left> }
 
-        <Body style={{flex: 3}}>{this._renderTitle()}</Body>
+        <Body style={{flex: 4}}>{this._renderTitle()}</Body>
         <Right style={{flex: 1}}>{this._renderRight()}</Right>
         <StatusBar translucent={true} barStyle={'dark-content'} />
       </Header>

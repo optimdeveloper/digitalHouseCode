@@ -1,7 +1,5 @@
 import React from 'react'
 import {Text } from 'react-native'
-import CommonStyle from '../CommonStyle'
-
 
 const MyText = ({ text, style, onPress, numberOfLines }) => {
     return (

@@ -33,7 +33,7 @@ export const getProducts = () => {
           res.map(item => {
             if (item.is_redemption) points -= item.points;
             else points += item.points;
-            item.createdAt=Utils.formatDate(item)
+            item.createdAt=Utils.formatDate(item.createdAt)
           });
           let productsWon = res.filter(item => !item.is_redemption);
           let productsLose = res.filter(item => item.is_redemption);

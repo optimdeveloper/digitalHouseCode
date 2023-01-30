@@ -19,8 +19,12 @@ export default {
     showErrorToast(message, duration = 4000) {
         this.showToast(message, duration, 'danger');
     },
-    formatDate(item){
-        return moment(item.createdAt).locale('es').format('D [de] MMMM, YYYY')
+    formatDate(createdAt){
+        return moment(createdAt).locale('es').format('D [de] MMMM, YYYY')
+    },
+    formatPoints(points){
+        let dollarUSLocale = Intl.NumberFormat('en-US', {minimumFractionDigits: 2});
+        return dollarUSLocale.format(points)
     }
 
 }

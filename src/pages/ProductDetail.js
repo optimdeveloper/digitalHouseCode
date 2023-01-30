@@ -1,15 +1,18 @@
 import React, {useEffect} from 'react';
 import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import Button from '../components/common/Button';
 import MainContainer from '../components/common/MainContainer';
+import CommonStyle from '../components/CommonStyle';
 import Colors from '../constants/Colors';
 import Fonts from '../constants/Fonts';
 import {logger} from '../core/AppLogger';
-import {goBack, navigate} from '../navigation/RootNavigation';
+import {goBack} from '../navigation/RootNavigation';
 
 const ProductDetail = () => {
-  const windowWidth = Dimensions.get('window').width;
+  const {width} = Dimensions.get('window');
+const actualImageHeight = 200;
+const actualImageWidth = 500;
   const product = useSelector(state => state.product.product);
   logger(product);
   useEffect(() => {}, []);
@@ -19,15 +22,22 @@ const ProductDetail = () => {
       header={{
         title: product.product,
         noLeft: true,
+        hheader: true,
         backgroundColor: Colors.header,
       }}>
-      <View style={styles.containerTop}>
+    <View style={[CommonStyle.Shadow,styles.containerTop]}>
+      <View style={{
+        alignSelf:"center",
+        width: 50 * (width / 100),
+        height: actualImageHeight * (width / actualImageWidth),
+      }}>
         <Image
           style={styles.logo}
-          source={{uri: product.image, width: (windowWidth * 90) / 100}}
+          source={{uri: product.image}}
         />
       </View>
-      <View style={{flex: 1, margin: 15}}>
+      </View>
+      <View style={{flex: 1, margin: 20}}>
         <Text style={styles.labelT}>Detalles del Producto:</Text>
         <Text style={styles.labelB}>Comprado el {product.createdAt}</Text>
         {!product.is_redemption ? (
@@ -36,7 +46,7 @@ const ProductDetail = () => {
           <Text style={styles.labelT}>Con esta compra perdiste:</Text>
         )}
         <Text style={styles.labelP}>{product.points} puntos</Text>
-        <View style={{flexDirection: 'row', marginTop: 20, flex: 1}}>
+        <View style={{flexDirection: 'row', flex: 1}}>
           <Button
             style={[styles.btn]}
             title="Aceptar"
@@ -51,9 +61,8 @@ const ProductDetail = () => {
 export default ProductDetail;
 const styles = StyleSheet.create({
   logo: {
-    borderRadius: 10,
-    flex: 1,
-    margin: 10,
+    width: null, height: null,
+    flex:1,
   },
   btn: {
     position: 'absolute',
@@ -61,32 +70,16 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   containerTop: {
-    flex: 1,
+    marginTop:20,
     alignSelf: 'center',
   },
-  container: {
-    flex: 1,
-    marginLeft: 10,
-    marginRight: 10,
-    marginTop: 15,
-    flexDirection: 'row',
-  },
-  viewTop: {
-    flex: 3,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignSelf: 'center',
-  },
-  viewF: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  },
+
   labelP: {
     color: Colors.black,
     fontFamily: Fonts.name.bold,
     fontSize: Fonts.size._24px,
     lineHeight: 32.78,
-    marginTop: 25,
+    marginTop: 35,
   },
   labelT: {
     color: Colors.gray,
@@ -102,14 +95,5 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
   },
-  viewP: {
-    flex: 1.5,
-    alignItems: 'flex-end',
-    alignSelf: 'center',
-  },
-  viewL: {
-    flex: 0.5,
-    alignItems: 'flex-end',
-    alignSelf: 'center',
-  },
+
 });

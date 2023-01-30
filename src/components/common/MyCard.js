@@ -4,7 +4,7 @@ import Colors from '../../constants/Colors'
 import CommonStyle from '../CommonStyle'
 
 
-const MyCard = ({ style, children, }) => {
+const MyCard = ({ style, children }) => {
 
     const styles = StyleSheet.create({
        custom:{
@@ -19,9 +19,11 @@ const MyCard = ({ style, children, }) => {
        }
     })
     return (
+       
         <View style={[CommonStyle.CardStyle, styles.custom, style]}>
             {children}
         </View>
+      
     )
 }
 
